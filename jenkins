@@ -21,8 +21,6 @@ pipeline {
 	    agent any
 	    steps{   
 	            sh 'docker pull docker191294/new:latest'
-		    #sh 'kubectl delete deployments builds'
-		    #sh 'kubectl delete services builds'
 		    sh 'kubectl create deployment new --image docker191294/new'
 		    sh 'kubectl set image deployments/new new=docker191294/new:latest'
 		    sh 'kubectl create service nodeport new --tcp=80:80'
