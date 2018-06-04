@@ -4,7 +4,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build - < docker191294/new'
+        sh 'docker build -t docker191294/new .'
       }
     }
     stage('Docker Push') {
